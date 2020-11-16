@@ -15,6 +15,11 @@ class CreateApplesTable extends Migration
     {
         Schema::create('apples', function (Blueprint $table) {
             $table->id();
+            $table->string('color');
+            $table->dateTime('date_of_falling');
+            $table->boolean('status');
+            $table->tinyInteger('percentage');
+            $table->boolean('fresh');
             $table->timestamps();
         });
     }
