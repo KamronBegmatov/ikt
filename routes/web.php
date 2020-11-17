@@ -18,5 +18,13 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
+    return view('dashboard', ['apples' => \App\Models\Apple::all()]);
 })->name('dashboard');
+
+Route::post('/dashboard/store', '\App\Http\Controllers\AppleController@store');
+
+Route::post('/dashboard/fall', '\App\Http\Controllers\AppleController@fall');
+
+Route::post('/dashboard/eat', '\App\Http\Controllers\AppleController@update');
+
+Route::post('/dashboard/delete', '\App\Http\Controllers\AppleController@destroy');

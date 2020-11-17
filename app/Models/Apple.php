@@ -8,4 +8,5 @@ use Illuminate\Database\Eloquent\Model;
 class Apple extends Model
 {
     use HasFactory;
+    protected $fillable=['color'];
 }
